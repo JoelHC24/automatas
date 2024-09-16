@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/inicial"
+    tools:context=".MainActivity">
+
+    <!-- EditText donde el usuario ingresa la expresión -->
+
+    <!-- TextView que mostrará el resultado en notación prefijo y posfijo -->
+    <EditText
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="right"
+        android:inputType="none"
+        android:paddingHorizontal="30dp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="right"
+        android:paddingHorizontal="30dp"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:columnCount="4"
+        android:padding="8dp"
+        android:rowCount="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onClear"
+            android:text="C"
+            android:textColor="#9FC9ED"
+            android:textSize="22sp" />
+
+        <ImageButton
+            android:id="@+id/btn_borrar"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:onClick="onBorrar"
+            android:paddingRight="5dp"
+            android:src="@drawable/delete_icon_236817" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onOperator"
+            android:text="^"
+            android:textColor="#9FC9ED"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onOperator"
+            android:text="/"
+            android:textColor="#9FC9ED"
+            android:textSize="22sp" />
+
+        <!-- Números y operadores -->
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="7"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="8"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="9"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onOperator"
+            android:text="*"
+            android:textColor="#9FC9ED"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="4"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="6"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onOperator"
+            android:text="+"
+            android:textColor="#9FC9ED"
+            android:textSize="22sp" />
+
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="3"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onOperator"
+            android:text="-"
+            android:textColor="#9FC9ED"
+            android:textSize="22sp" />
+
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onDigit"
+            android:text="("
+            android:textColor="#8F8F8F"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onOperator"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:backgroundTint="#2B2A2A"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onOperator"
+            android:text=")"
+            android:textColor="#8F8F8F"
+            android:textSize="22sp" />
+
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_circular"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onEqual"
+            android:text="="
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <!-- Botón Borrar -->
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/calucularprepos"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="45dp"
+        android:backgroundTint="@color/inicial"
+        android:fontFamily="@font/roboto_medium"
+        android:onClick="onEqual"
+        android:text="Calcudora"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/calucular23"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="@color/inicial"
+        android:fontFamily="@font/roboto_medium"
+        android:onClick="onEqual"
+        android:text="Cuadros"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calucularprepos"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
